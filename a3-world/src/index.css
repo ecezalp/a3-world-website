@@ -2,20 +2,20 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background-color: red;
+  background-color: lightpink;
 }
 
 .black-button {
   float: left;
-  background-color: black;
-  color: red;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: lightpink;
   border: darkred;
 }
 
 .black-button:hover {
   float: left;
-  background-color: red;
-  color: black;
+  background-color: lightpink;
+  color: rgba(0, 0, 0, 0.7);
   border: darkred;
 }
 
@@ -25,13 +25,13 @@ body {
 }*/
 
 .popover-parent {
-  background-color: black;
-  color: red;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: lightpink;
 }
 
 .popover-child {
-  background-color: black;
-  color: deepskyblue;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: lightpink;
 
   font-family: 'Menlo'
 }
@@ -47,5 +47,14 @@ body {
   bottom: 70%;
   right: 30%;
   width: 500px;
+  background-color: lightpink;
+}
+
+.top-central-div {
+  position: fixed;
+  bottom: 85%;
+  right: 27%;
+  width: 600px;
   background-color: red;
+   font-family: 'Menlo'
 }
