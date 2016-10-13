@@ -2,4 +2,50 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background-color: red;
+}
+
+.black-button {
+  float: left;
+  background-color: black;
+  color: red;
+  border: darkred;
+}
+
+.black-button:hover {
+  float: left;
+  background-color: red;
+  color: black;
+  border: darkred;
+}
+
+/*.button-toolbar {
+ 
+
+}*/
+
+.popover-parent {
+  background-color: black;
+  color: red;
+}
+
+.popover-child {
+  background-color: black;
+  color: deepskyblue;
+
+  font-family: 'Menlo'
+}
+
+/*.circle {
+  background-color: black;
+  color: red;
+  border: darkred;
+}*/
+
+.central-div {
+  position: fixed;
+  bottom: 70%;
+  right: 30%;
+  width: 500px;
+  background-color: red;
 }
