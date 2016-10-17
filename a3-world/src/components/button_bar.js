@@ -1,90 +1,125 @@
 import React from 'react'
-import { Button, ButtonToolbar, Popover, OverlayTrigger } from 'react-bootstrap'
+import { Button, ButtonToolbar, Popover, OverlayTrigger, Transition } from 'react-bootstrap'
+import About from './about_me'
+import Contact from './contact'
+import Algorithms from './algorithms'
+import Reviews from './reviews'
 
-function ButtonBar () {
 
-    
-    const popoverHoverFocus = (
-    <Popover className="popover-child" id="popover-trigger-hover-focus" >
-        <strong>Ece Özalp</strong> is a New York based web developer. She has completed Flatiron School's Web Development Immersive in 2016, Javascript and Ruby on Rails program. Ece loves programming. She built this application using React.js.
-    </Popover>
-    );    
 
-    return(
-        <ButtonToolbar className="button-toolbar" float="center">
-            <OverlayTrigger className="popover-parent" trigger={['hover', 'focus']} placement="bottom" overlay={popoverHoverFocus}>
-                <Button className="black-button" bsStyle="warning" bsSize="large" >
-                    About
-                </Button>
-            </OverlayTrigger>
-        <Button className="black-button" bsStyle="warning" bsSize="large" >
-            Contact
-        </Button>
-        <Button className="black-button" bsStyle="warning" bsSize="large" >
-            Algorithms
-        </Button>
-        <Button className="black-button" bsStyle="warning" bsSize="large" >
-            Reviews
-        </Button>
-        
-        </ButtonToolbar>
-    )
+class ButtonBar extends React.Component {
+
+    render (){
+        return (
+            <ButtonToolbar>
+                <About />
+                <Contact />
+                <Algorithms />
+                <Reviews />
+            </ButtonToolbar> 
+        )
+    }
 }
 
 export default ButtonBar
 
-// export default function () {
-//     return(<nav class="navbar navbar-default">
-//   <div class="container-fluid">
-//     <!-- Brand and toggle get grouped for better mobile display -->
-//     <div class="navbar-header">
-//       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-//         <span class="sr-only">Toggle navigation</span>
-//         <span class="icon-bar"></span>
-//         <span class="icon-bar"></span>
-//         <span class="icon-bar"></span>
-//       </button>
-//       <a class="navbar-brand" href="#">Brand</a>
-//     </div>
 
-//     <!-- Collect the nav links, forms, and other content for toggling -->
-//     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-//       <ul class="nav navbar-nav">
-//         <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-//         <li><a href="#">Link</a></li>
-//         <li class="dropdown">
-//           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-//           <ul class="dropdown-menu">
-//             <li><a href="#">Action</a></li>
-//             <li><a href="#">Another action</a></li>
-//             <li><a href="#">Something else here</a></li>
-//             <li role="separator" class="divider"></li>
-//             <li><a href="#">Separated link</a></li>
-//             <li role="separator" class="divider"></li>
-//             <li><a href="#">One more separated link</a></li>
-//           </ul>
-//         </li>
-//       </ul>
-//       <form class="navbar-form navbar-left">
-//         <div class="form-group">
-//           <input type="text" class="form-control" placeholder="Search">
-//         </div>
-//         <button type="submit" class="btn btn-default">Submit</button>
-//       </form>
-//       <ul class="nav navbar-nav navbar-right">
-//         <li><a href="#">Link</a></li>
-//         <li class="dropdown">
-//           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-//           <ul class="dropdown-menu">
-//             <li><a href="#">Action</a></li>
-//             <li><a href="#">Another action</a></li>
-//             <li><a href="#">Something else here</a></li>
-//             <li role="separator" class="divider"></li>
-//             <li><a href="#">Separated link</a></li>
-//           </ul>
-//         </li>
-//       </ul>
-//     </div><!-- /.navbar-collapse -->
-//   </div><!-- /.container-fluid -->
-// </nav>)
+
+
+
+
+
+
+
+//     render(){
+
+//     return (
+    
+
+//         <Button bsStyle='primary' onClick={this.toggle}>
+//           dismiss
+//         </Button>
+//       </div>
+//     );
+//   }
+
 // }
+
+
+
+
+
+
+
+
+
+// <div classname="middle-main-div">
+          
+//           </div>
+
+
+
+
+
+
+
+    // const popoverHoverFocus = (
+    // <Popover className="popover-child" id="popover-trigger-hover-focus" >
+    //     <strong>Ece Özalp</strong> is a New York based web developer. She has completed Flatiron School's Web Development Immersive in 2016, Javascript and Ruby on Rails program. Ece loves programming. Her dream is to become a senior developer. She has experience with Ruby on Rails, Javascript, React.js, Redux, SQL, ActiveRecord, HTML5/CSS, jQuery, Git, Heroku.
+    // </Popover>
+    // );    
+
+    // return(
+    //     <ButtonToolbar className="button-toolbar" float="center">
+    //         <OverlayTrigger className="popover-parent" trigger={['hover', 'focus']} placement="bottom" overlay={popoverHoverFocus}>
+    //             <Button className="black-button" bsStyle="warning" bsSize="large" >
+    //                 About
+    //             </Button>
+    //         </OverlayTrigger>
+    //     <Button className="black-button" bsStyle="warning" bsSize="large" >
+    //         Contact
+    //     </Button>
+    //     <Button className="black-button" bsStyle="warning" bsSize="large" >
+    //         Algorithms
+    //     </Button>
+    //     <Button className="black-button" bsStyle="warning" bsSize="large" >
+    //         Reviews
+    //     </Button>
+        
+    //     </ButtonToolbar>
+    // )
+
+
+    // constructor (props) {
+    //     super(props)
+    //     this.state = { aboutIn: false };
+    //     this.aboutHover = this.aboutHover.bind(this)
+    // }
+
+    // toggle(){
+    //     return this.setState({ in: !this.state.aboutIn });
+    // }
+
+    // aboutHover (){
+    //     return (
+    //             <div className='transition-example'>
+    //                 <p>Create your own declarative fade transition</p>
+    //                     <Transition
+    //                         in={this.state.aboutIn}
+    //                         timeout={200}
+    //                         className='fade'
+    //                         enteredClassName='in'
+    //                         enteringClassName='in'>
+    //                         <div className='panel panel-default'>
+    //                             <div className='panel-body'>
+    //                                 Anim pariatur cliche reprehenderit, enim eiusmod high life
+    //                                 accusamus terry richardson ad squid.
+    //                                 Nihil anim keffiyeh helvetica, craft beer labore wes
+    //                                 anderson cred nesciunt sapiente ea proident.
+    //                             </div>
+    //                         </div>
+    //                     </Transition>
+    //             </div>
+    //     )
+    // }
+    // onMouseover={this.aboutHover()}

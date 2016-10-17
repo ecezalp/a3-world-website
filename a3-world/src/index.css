@@ -32,7 +32,6 @@ body {
 .popover-child {
   background-color: rgba(0, 0, 0, 0.7);
   color: lightpink;
-
   font-family: 'Menlo'
 }
 
@@ -51,10 +50,64 @@ body {
 }
 
 .top-central-div {
+  position: relative;;
+  width: 600px;
+  margin-left: calc(50% - 300px);
+  margin-right: calc(50% - 300px);
+  font-family: 'Arial';
+}
+
+.btn-toolbar {
+  position: relative;
+  width: 600px;
+  text-align: center;
+  margin-left: calc(50% - 300px);
+  margin-right: calc(50% - 300px);
+}
+
+.btn-toolbar button {
+  margin: 5px 1.5px 0 1.5px;
+}
+
+.example-enter {
+  opacity: 0.01;
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.example-leave {
+  opacity: 1;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+
+.middle-main-div {
   position: fixed;
-  bottom: 85%;
+  bottom: 55%;
   right: 27%;
   width: 600px;
-  background-color: red;
-   font-family: 'Menlo'
+  font-family: 'Arial';
+  background-color: red 
+}
+
+
+
+
+
+
+.fade {
+  opacity: 0;
+  -webkit-transition: opacity 500ms linear;
+       -o-transition: opacity 500ms linear;
+          transition: opacity 500ms linear;
+}
+
+.in {
+  opacity: 1;
 }

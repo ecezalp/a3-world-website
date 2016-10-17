@@ -2,29 +2,29 @@ import React, {Component} from 'react';
 import './App.css';
 import ButtonBar from './components/button_bar'
 import { Col } from 'react-bootstrap'
-// import CentralAnimation from './components/central_animation'
+import CentralAnimation from './components/central_animation'
 
 class App extends Component {
   render() {
     return (
       <div>
           <div className="top-central-div">
-            <h1> HELLOOOO</h1>
+            <CentralAnimation />
           </div>
-          <div className="central-div">
+           <div className="central-div">
              <ButtonBar />
           </div>
-        <div>
+          <div>
               {this.props.children}
-        </div>
           </div>
-  
-    );
+      </div>
+    )
   }
 }
 
 export default App;
 
-//  <CentralAnimation />
+
+
 
 

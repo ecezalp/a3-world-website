@@ -1,20 +1,20 @@
 import React from 'react'
 import { Button, ButtonToolbar, Popover, OverlayTrigger, Transition } from 'react-bootstrap'
 
-class Contact extends React.Component {
+class Algorithms extends React.Component {
 
     constructor (props) {
         super(props)
         this.state = {aboutButton: false}
         this.toggle = this.toggle.bind(this)
-        this.contactText = this.contactText.bind(this)
+        this.algorithmsText = this.algorithmsText.bind(this)
     }
 
     toggle () {
         this.setState.aboutButton = {aboutButton: !this.state.aboutButton}
     }
 
-    contactText () {
+    algorithmsText () {
         return "Hellooooo"
     }
 
@@ -22,14 +22,14 @@ class Contact extends React.Component {
         return (
             <div>
                 <Button className="black-button" bsStyle="warning" bsSize="large" onClick={this.toggle} >
-                    Contact
+                    Algorithms
                 </Button>
             </div>
         )
     }  
 }
 
-export default Contact
+export default Algorithms
 
 
 
