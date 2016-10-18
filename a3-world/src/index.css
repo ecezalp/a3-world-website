@@ -108,11 +108,18 @@ body {
   font-size: 16px;
 }
 
-
-
-
-
-
+.top-middle-left-div {
+  position: absolute;
+  bottom: -280%;
+  right: 120%;
+  width: 300px;
+  font-family: 'Menlo';
+  background-color:rgba(255,182,193, 0.7); 
+  -webkit-column-count: 2; /* Chrome, Safari, Opera */
+  -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+  font-size: 16px;
+}
 
 
 .fade {
