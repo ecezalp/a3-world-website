@@ -110,8 +110,8 @@ body {
 
 .top-middle-left-div {
   position: absolute;
-  bottom: -280%;
-  right: 120%;
+  bottom: -480%;
+  right: 115%;
   width: 300px;
   font-family: 'Menlo';
   background-color:rgba(255,182,193, 0.7); 
@@ -121,6 +121,13 @@ body {
   font-size: 16px;
 }
 
+.right-upper-div {
+  position: absolute;
+   background-color:rgba(255,182,193, 0.7);
+  bottom: -150px;
+  right: -330px;
+  width: 300px;
+}
 
 .fade {
   opacity: 0;
@@ -132,3 +139,12 @@ body {
 .in {
   opacity: 1;
 }
+
+ /*position: absolute;
+ 
+  font-family: 'Menlo';
+  ; 
+  -webkit-column-count: 2;
+  -moz-column-count: 2; 
+    column-count: 2;
+  font-size: 16px;*/

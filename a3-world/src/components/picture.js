@@ -5,17 +5,23 @@ class Picture extends React.Component {
 
     constructor (props) {
         super(props)
-        this.state = {aboutButton: false}
+        this.state = {picButton: false, pic: null}
         this.toggle = this.toggle.bind(this)
-        this.contactText = this.contactText.bind(this)
+        this.pic = this.pic.bind(this)
     }
 
     toggle () {
-        this.setState.aboutButton = {aboutButton: !this.state.aboutButton}
+        if (this.state.picButton) {
+            this.setState({pic: this.pic(), picButton: !this.state.picButton})
+        }
+        else {
+            this.setState({pic: null, picButton: !this.state.picButton})
+        }    
     }
 
-    contactText () {
-        return "Hellooooo"
+    pic () {
+        return (<img src={'../assets/my_face'} width="100px" height="100px" />)
+        // return (<img src='http://imgur.com/a/pXEYg' width="100px" height="100px" />)
     }
 
     render() {
@@ -24,11 +30,15 @@ class Picture extends React.Component {
                 <Button className="black-button" bsStyle="warning" bsSize="large" onClick={this.toggle} >
                     Picture
                 </Button>
+                <div className="right-upper-div">
+                    {this.state.pic}
+                </div>
             </div>
         )
     }  
 }
 
+// {this.state.pic} 
 export default Picture
 
 
