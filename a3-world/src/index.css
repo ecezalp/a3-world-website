@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background-color: lightpink;
+  background-image: url('./assets/wall.png');
 }
 
 .black-button {
@@ -14,7 +14,7 @@ body {
 
 .black-button:hover {
   float: left;
-  background-color: lightpink;
+  background-color: rgba(255,182,193, 0.7);
   color: rgba(0, 0, 0, 0.7);
   border: darkred;
 }
@@ -24,7 +24,7 @@ body {
 
 }*/
 
-.popover-parent {
+/*.popover-parent {
   background-color: rgba(0, 0, 0, 0.7);
   color: lightpink;
 }
@@ -33,7 +33,7 @@ body {
   background-color: rgba(0, 0, 0, 0.7);
   color: lightpink;
   font-family: 'Menlo'
-}
+}*/
 
 /*.circle {
   background-color: black;
@@ -46,7 +46,6 @@ body {
   bottom: 70%;
   right: 30%;
   width: 500px;
-  background-color: lightpink;
 }
 
 .top-central-div {
@@ -66,7 +65,7 @@ body {
 }
 
 .btn-toolbar button {
-  margin: 5px 1.5px 0 1.5px;
+  margin: 5px 7px 0 7px;
 }
 
 .example-enter {
@@ -87,14 +86,29 @@ body {
   transition: opacity 300ms ease-in;
 }
 
-.middle-main-div {
+/*.middle-main-div {
   position: fixed;
   bottom: 55%;
-  right: 27%;
+  right: 30%;
   width: 600px;
   font-family: 'Arial';
-  background-color: red 
+  background-color:rgba(255,182,193, 0.7) 
+}*/
+
+.middle-main-div {
+  position: fixed;
+  bottom: 30%;
+  right: 28%;
+  width: 600px;
+  font-family: 'Menlo';
+  background-color:rgba(255,182,193, 0.7); 
+  -webkit-column-count: 2; /* Chrome, Safari, Opera */
+  -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+  font-size: 16px;
 }
+
+
 
 
 

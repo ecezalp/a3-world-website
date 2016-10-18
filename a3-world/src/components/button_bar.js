@@ -4,6 +4,7 @@ import About from './about_me'
 import Contact from './contact'
 import Algorithms from './algorithms'
 import Reviews from './reviews'
+import Picture from './picture'
 
 
 
@@ -16,6 +17,7 @@ class ButtonBar extends React.Component {
                 <Contact />
                 <Algorithms />
                 <Reviews />
+                <Picture />
             </ButtonToolbar> 
         )
     }
