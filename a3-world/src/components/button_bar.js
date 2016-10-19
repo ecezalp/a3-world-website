@@ -12,16 +12,9 @@ class ButtonBar extends React.Component {
 
         constructor (props) {
         super(props)
-        this.state = {  aboutButton: false, 
-                        contactButton: false, 
-                        algorithmsButton: false, 
-                        reviewsButton: false, 
-                        pictureButton: false, 
-                        projectsButton: false, 
-                        componentToBeRendered: null
-                    }
+        this.state = {componentToBeRendered: null}
         this.toggleAbout = this.toggleAbout.bind(this)
-        this.toggleContent = this.toggleContent.bind(this)
+        this.toggleContact = this.toggleContact.bind(this)
         this.toggleAlgorithms = this.toggleAlgorithms.bind(this)
         this.toggleReviews = this.toggleReviews.bind(this)
         this.togglePicture = this.togglePicture.bind(this)
@@ -40,44 +33,27 @@ class ButtonBar extends React.Component {
    
 
     toggleAbout () {
-        if (!this.state.aboutButton) {
-            this.setState({componentToBeRendered: <About />, aboutButton: !this.state.aboutButton})
-        }
-        else {
-            this.setState({componentToBeRendered: null, aboutButton: !this.state.aboutButton})
-        }
+        this.setState({componentToBeRendered: <About />})
     }
 
      toggleAlgorithms () {
-
+         this.setState({componentToBeRendered: <Algorithms />})
     }
 
     toggleReviews () {
-
+        this.setState({componentToBeRendered: <Reviews />})
     }
 
-   
-
-    toggleContent () {
-        
+    toggleContact () {
+        this.setState({componentToBeRendered: <Contact />})
     }
 
      togglePicture () {
-         if (!this.state.pictureButton) {
-            this.setState({componentToBeRendered: <Picture />, pictureButton: !this.state.pictureButton})
-        }
-        else {
-            this.setState({componentToBeRendered: null, pictureButton: !this.state.pictureButton})
-        }
+            this.setState({componentToBeRendered: <Picture />})
     }
 
     toggleProjects () {
-        if (!this.state.projectsButton) {
-            this.setState({componentToBeRendered: <Projects />, projectsButton: !this.state.projectsButton})
-        }
-        else {
-            this.setState({componentToBeRendered: null, projectsButton: !this.state.projectsButton})
-        }
+            this.setState({componentToBeRendered: <Projects />})
     }
 
 
