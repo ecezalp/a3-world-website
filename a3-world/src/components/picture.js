@@ -20,7 +20,7 @@ class Picture extends React.Component {
     }
 
     pic () {
-        return (<img src={'../assets/my_face'} width="100px" height="100px" />)
+        return (<img src={'http://i.imgur.com/lqBzDD7.jpg'} width="100px" height="100px" />)
         // return (<img src='http://imgur.com/a/pXEYg' width="100px" height="100px" />)
     }
 
