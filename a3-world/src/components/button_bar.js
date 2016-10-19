@@ -56,12 +56,19 @@ class ButtonBar extends React.Component {
 
     }
 
-    togglePicture () {
-
-    }
+   
 
     toggleContent () {
         
+    }
+
+     togglePicture () {
+         if (!this.state.pictureButton) {
+            this.setState({componentToBeRendered: <Picture />, pictureButton: !this.state.pictureButton})
+        }
+        else {
+            this.setState({componentToBeRendered: null, pictureButton: !this.state.pictureButton})
+        }
     }
 
     toggleProjects () {
@@ -91,7 +98,7 @@ class ButtonBar extends React.Component {
                     Reviews
                 </Button>
                 <Button className="black-button" bsStyle="warning" bsSize="large" onClick={this.togglePicture} >
-                    Picture
+                    Pictures
                 </Button>
                 <Button className="black-button" bsStyle="warning" bsSize="large" onClick={this.toggleProjects} >
                     Projects
