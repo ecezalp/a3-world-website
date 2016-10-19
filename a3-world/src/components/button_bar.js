@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, ButtonToolbar, Popover, OverlayTrigger, Transition } from 'react-bootstrap'
+import { Button, DropdownButton, MenuItem, ButtonToolbar, Popover, OverlayTrigger, Transition } from 'react-bootstrap'
 import About from './about_me'
 import Contact from './contact'
 import Algorithms from './algorithms'
@@ -12,16 +12,9 @@ class ButtonBar extends React.Component {
 
         constructor (props) {
         super(props)
-        this.state = {  aboutButton: false, 
-                        contactButton: false, 
-                        algorithmsButton: false, 
-                        reviewsButton: false, 
-                        pictureButton: false, 
-                        projectsButton: false, 
-                        componentToBeRendered: null
-                    }
+        this.state = {componentToBeRendered: null}
         this.toggleAbout = this.toggleAbout.bind(this)
-        this.toggleContent = this.toggleContent.bind(this)
+        this.toggleContact = this.toggleContact.bind(this)
         this.toggleAlgorithms = this.toggleAlgorithms.bind(this)
         this.toggleReviews = this.toggleReviews.bind(this)
         this.togglePicture = this.togglePicture.bind(this)
@@ -40,44 +33,27 @@ class ButtonBar extends React.Component {
    
 
     toggleAbout () {
-        if (!this.state.aboutButton) {
-            this.setState({componentToBeRendered: <About />, aboutButton: !this.state.aboutButton})
-        }
-        else {
-            this.setState({componentToBeRendered: null, aboutButton: !this.state.aboutButton})
-        }
+        this.setState({componentToBeRendered: <About />})
     }
 
-     toggleAlgorithms () {
-
+     toggleAlgorithms (algNum) {
+        this.setState({componentToBeRendered: <Algorithms algNum/>})
     }
 
     toggleReviews () {
-
+        this.setState({componentToBeRendered: <Reviews />})
     }
 
-   
-
-    toggleContent () {
-        
+    toggleContact () {
+        this.setState({componentToBeRendered: <Contact />})
     }
 
      togglePicture () {
-         if (!this.state.pictureButton) {
-            this.setState({componentToBeRendered: <Picture />, pictureButton: !this.state.pictureButton})
-        }
-        else {
-            this.setState({componentToBeRendered: null, pictureButton: !this.state.pictureButton})
-        }
+        this.setState({componentToBeRendered: <Picture />})
     }
 
     toggleProjects () {
-        if (!this.state.projectsButton) {
-            this.setState({componentToBeRendered: <Projects />, projectsButton: !this.state.projectsButton})
-        }
-        else {
-            this.setState({componentToBeRendered: null, projectsButton: !this.state.projectsButton})
-        }
+        this.setState({componentToBeRendered: <Projects />})
     }
 
 
@@ -91,9 +67,13 @@ class ButtonBar extends React.Component {
                 <Button className="black-button" bsStyle="warning" bsSize="large" onClick={this.toggleContact} >
                     Contact
                 </Button>
-                <Button className="black-button" bsStyle="warning" bsSize="large" onClick={this.toggleAlgorithms} >
-                    Algorithms
-                </Button>
+                <DropdownButton className="black-button" title="Algorithms" noCaret bsStyle="warning" bsSize="large" >
+                    <MenuItem eventKey="1"  onClick={this.toggleAlgorithms(1)}> 1 (Project Euler) </MenuItem>
+                    <MenuItem eventKey="2" onClick={this.toggleAlgorithms(2)}> 2 (Project Euler) </MenuItem>
+                    <MenuItem eventKey="3" onClick={this.toggleAlgorithms(3)}> 3 (Project Euler) </MenuItem>
+                    <MenuItem eventKey="5" onClick={this.toggleAlgorithms(5)}> 5 (Project Euler) </MenuItem>
+                    <MenuItem eventKey="6" onClick={this.toggleAlgorithms(6)}> 6 (Project Euler) </MenuItem>
+                </DropdownButton>
                 <Button className="black-button" bsStyle="warning" bsSize="large" onClick={this.toggleReviews} >
                     Reviews
                 </Button>
