@@ -5,20 +5,103 @@ import Contact from './contact'
 import Algorithms from './algorithms'
 import Reviews from './reviews'
 import Picture from './picture'
-
+import Projects from './projects'
 
 
 class ButtonBar extends React.Component {
 
+        constructor (props) {
+        super(props)
+        this.state = {  aboutButton: false, 
+                        contactButton: false, 
+                        algorithmsButton: false, 
+                        reviewsButton: false, 
+                        pictureButton: false, 
+                        projectsButton: false, 
+                        componentToBeRendered: null
+                    }
+        this.toggleAbout = this.toggleAbout.bind(this)
+        this.toggleContent = this.toggleContent.bind(this)
+        this.toggleAlgorithms = this.toggleAlgorithms.bind(this)
+        this.toggleReviews = this.toggleReviews.bind(this)
+        this.togglePicture = this.togglePicture.bind(this)
+        this.toggleProjects = this.toggleProjects.bind(this)
+    }
+
+    // toggle () {
+    //     if (this.state.aboutButton) {
+    //         this.setState({text: this.aboutText(), aboutButton: !this.state.aboutButton})
+    //     }
+    //     else {
+    //         this.setState({text: null, aboutButton: !this.state.aboutButton})
+    //     }    
+    // }
+
+   
+
+    toggleAbout () {
+        if (!this.state.aboutButton) {
+            this.setState({componentToBeRendered: <About />, aboutButton: !this.state.aboutButton})
+        }
+        else {
+            this.setState({componentToBeRendered: null, aboutButton: !this.state.aboutButton})
+        }
+    }
+
+     toggleAlgorithms () {
+
+    }
+
+    toggleReviews () {
+
+    }
+
+    togglePicture () {
+
+    }
+
+    toggleContent () {
+        
+    }
+
+    toggleProjects () {
+        if (!this.state.projectsButton) {
+            this.setState({componentToBeRendered: <Projects />, projectsButton: !this.state.projectsButton})
+        }
+        else {
+            this.setState({componentToBeRendered: null, projectsButton: !this.state.projectsButton})
+        }
+    }
+
+
     render (){
         return (
+            <div>
             <ButtonToolbar>
-                <About />
-                <Contact />
-                <Algorithms />
-                <Reviews />
-                <Picture />
+                <Button className="black-button" bsStyle="warning" bsSize="large" onClick={this.toggleAbout} >
+                    About
+                </Button>
+                <Button className="black-button" bsStyle="warning" bsSize="large" onClick={this.toggleContact} >
+                    Contact
+                </Button>
+                <Button className="black-button" bsStyle="warning" bsSize="large" onClick={this.toggleAlgorithms} >
+                    Algorithms
+                </Button>
+                <Button className="black-button" bsStyle="warning" bsSize="large" onClick={this.toggleReviews} >
+                    Reviews
+                </Button>
+                <Button className="black-button" bsStyle="warning" bsSize="large" onClick={this.togglePicture} >
+                    Picture
+                </Button>
+                <Button className="black-button" bsStyle="warning" bsSize="large" onClick={this.toggleProjects} >
+                    Projects
+                </Button>
             </ButtonToolbar> 
+            
+                <div className="middle-main-div">
+                    {this.state.componentToBeRendered}
+                </div>
+            </div>
         )
     }
 }
