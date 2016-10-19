@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, ButtonToolbar, Popover, OverlayTrigger, Transition } from 'react-bootstrap'
+import { Button, DropdownButton, MenuItem, ButtonToolbar, Popover, OverlayTrigger, Transition } from 'react-bootstrap'
 import About from './about_me'
 import Contact from './contact'
 import Algorithms from './algorithms'
@@ -36,8 +36,8 @@ class ButtonBar extends React.Component {
         this.setState({componentToBeRendered: <About />})
     }
 
-     toggleAlgorithms () {
-         this.setState({componentToBeRendered: <Algorithms />})
+     toggleAlgorithms (algNum) {
+        this.setState({componentToBeRendered: <Algorithms algNum/>})
     }
 
     toggleReviews () {
@@ -49,11 +49,11 @@ class ButtonBar extends React.Component {
     }
 
      togglePicture () {
-            this.setState({componentToBeRendered: <Picture />})
+        this.setState({componentToBeRendered: <Picture />})
     }
 
     toggleProjects () {
-            this.setState({componentToBeRendered: <Projects />})
+        this.setState({componentToBeRendered: <Projects />})
     }
 
 
@@ -67,9 +67,13 @@ class ButtonBar extends React.Component {
                 <Button className="black-button" bsStyle="warning" bsSize="large" onClick={this.toggleContact} >
                     Contact
                 </Button>
-                <Button className="black-button" bsStyle="warning" bsSize="large" onClick={this.toggleAlgorithms} >
-                    Algorithms
-                </Button>
+                <DropdownButton className="black-button" title="Algorithms" noCaret bsStyle="warning" bsSize="large" >
+                    <MenuItem eventKey="1"  onClick={this.toggleAlgorithms(1)}> 1 (Project Euler) </MenuItem>
+                    <MenuItem eventKey="2" onClick={this.toggleAlgorithms(2)}> 2 (Project Euler) </MenuItem>
+                    <MenuItem eventKey="3" onClick={this.toggleAlgorithms(3)}> 3 (Project Euler) </MenuItem>
+                    <MenuItem eventKey="5" onClick={this.toggleAlgorithms(5)}> 5 (Project Euler) </MenuItem>
+                    <MenuItem eventKey="6" onClick={this.toggleAlgorithms(6)}> 6 (Project Euler) </MenuItem>
+                </DropdownButton>
                 <Button className="black-button" bsStyle="warning" bsSize="large" onClick={this.toggleReviews} >
                     Reviews
                 </Button>

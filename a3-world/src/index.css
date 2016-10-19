@@ -68,6 +68,10 @@ body {
   margin: 5px 7px 0 7px;
 }
 
+.MenuItem {
+  background-color: rgba(255,182,193, 0.7); 
+}
+
 .example-enter {
   opacity: 0.01;
 }
