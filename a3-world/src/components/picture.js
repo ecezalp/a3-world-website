@@ -1,45 +1,20 @@
 import React from 'react'
 import { Button, ButtonToolbar, Popover, OverlayTrigger, Transition } from 'react-bootstrap'
 
-class Picture extends React.Component {
-
-    constructor (props) {
-        super(props)
-        this.state = {picButton: false, pic: null}
-        this.toggle = this.toggle.bind(this)
-        this.pic = this.pic.bind(this)
-    }
-
-    toggle () {
-        if (this.state.picButton) {
-            this.setState({pic: this.pic(), picButton: !this.state.picButton})
-        }
-        else {
-            this.setState({pic: null, picButton: !this.state.picButton})
-        }    
-    }
-
-    pic () {
-        return (<img src={'http://i.imgur.com/lqBzDD7.jpg'} width="100px" height="100px" />)
-        // return (<img src='http://imgur.com/a/pXEYg' width="100px" height="100px" />)
-    }
-
-    render() {
-        return (
+export default function Picture () {
+    const myPictureUrl = 'http://i.imgur.com/lqBzDD7.jpg' 
+    const myPictureUrlTwo = "http://i.imgur.com/fZ33PwW.jpg"
+    return ( 
+        <div> 
             <div>
-                <Button className="black-button" bsStyle="warning" bsSize="large" onClick={this.toggle} >
-                    Picture
-                </Button>
-                <div className="right-upper-div">
-                    {this.state.pic}
-                </div>
+                <img src={myPictureUrl} height="300px" witdh="200px" />
             </div>
-        )
-    }  
+            <div>
+                <img src={myPictureUrlTwo} height="300px" width="250px"/> 
+            </div>
+        </div>
+    )
 }
-
-// {this.state.pic} 
-export default Picture
 
 
 
