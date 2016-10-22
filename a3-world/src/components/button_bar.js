@@ -15,7 +15,7 @@ class ButtonBar extends React.Component {
         this.state = {componentToBeRendered: null}
         this.toggleAbout = this.toggleAbout.bind(this)
         this.toggleContact = this.toggleContact.bind(this)
-        this.toggleAlgorithms = this.toggleAlgorithms.bind(this)
+        // this.toggleAlgorithms = this.toggleAlgorithms.bind(this)
         this.toggleReviews = this.toggleReviews.bind(this)
         this.togglePicture = this.togglePicture.bind(this)
         this.toggleProjects = this.toggleProjects.bind(this)
@@ -58,7 +58,7 @@ class ButtonBar extends React.Component {
                     Contact
                 </Button>
 
-                <Button className="black-button" bsStyle="warning" bsSize="large" onClick={this.toggleAlgorithms("1")} >
+                <Button className="black-button" bsStyle="warning" bsSize="large" >
                     ALG
                 </Button>
                 <Button className="black-button" bsStyle="warning" bsSize="large" onClick={this.toggleReviews} >

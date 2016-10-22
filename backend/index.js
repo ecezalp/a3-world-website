@@ -1,9 +1,14 @@
 var express = require('express');
 var app = express();
+var bodyParser = require('body-parser')
 
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!');
 });
+
+app.use(bodyParser.urlencoded({
+    extended: true
+}))
 
 app.set('views', './views')
 app.set('view engine', 'ejs')
@@ -13,20 +18,16 @@ app.get('/', function(request, response){
     response.render('index', {header: "index"})
 })
 
-
-
-
 ////// TWILIO TEXT ZONE
-
-
 
 var twilio = require('twilio')
 var client = new twilio.RestClient('AC898a676e25e618bf68c74649024269c1', '4eb12339d3ba65a38023d07ae2865b55');
 
 app.post('/text', function(req, res){
+    console.log(req.body)
+    console.log(res)
     var myPhone = '+19173303815'
-    var texterName = req.body.texterName
-    var textMessage = req.body.textMessage + " by " + texterName
+    var textMessage = req.body.message + " by " + req.body.name
     var texterPhone = function(req) {
         if (req.body.phoneNumber) {
             return "+1" + req.body.phoneNumber
