@@ -1,0 +1,18 @@
+{
+  "name": "node_app",
+  "version": "1.0.0",
+  "description": "Backend for my personal website a3.world",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ece Ozalp",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "ejs": "^2.5.2",
+    "express": "^4.14.0",
+    "morgan": "^1.7.0",
+    "twilio": "^2.11.0"
+  }
+}
