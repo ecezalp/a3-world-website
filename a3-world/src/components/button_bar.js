@@ -1,28 +1,32 @@
 import React from 'react'
-import { Button, DropdownButton, MenuItem, ButtonToolbar, Popover, OverlayTrigger, Transition } from 'react-bootstrap'
+import { Button, DropdownButton, MenuItem, ButtonToolbar, Popover, OverlayTrigger, Transition, Fade } from 'react-bootstrap'
 import About from './about_me'
 import Contact from './contact'
 import Algorithms from './algorithms'
 import Reviews from './reviews'
 import Picture from './picture'
-import Projects from './projects'
 
 
 class ButtonBar extends React.Component {
 
         constructor (props) {
         super(props)
-        this.state = {componentToBeRendered: null}
+        this.state = {componentToBeRendered: null, open: false}
         this.toggleAbout = this.toggleAbout.bind(this)
         this.toggleContact = this.toggleContact.bind(this)
         // this.toggleAlgorithms = this.toggleAlgorithms.bind(this)
         this.toggleReviews = this.toggleReviews.bind(this)
         this.togglePicture = this.togglePicture.bind(this)
-        this.toggleProjects = this.toggleProjects.bind(this)
+        // this.onElementChange = this.onElementChange.bind(this)
+    }
+
+    falsifyOpen () {
+        this.setState({open: false})
     }
 
     toggleAbout () {
-        this.setState({componentToBeRendered: <About />})
+        this.falsifyOpen()
+        this.setState({componentToBeRendered: <About />, open: true})
     }
 
     //  toggleAlgorithms (algNum) {
@@ -31,50 +35,76 @@ class ButtonBar extends React.Component {
     // }
 
     toggleReviews () {
-        this.setState({componentToBeRendered: <Reviews />})
+        this.falsifyOpen()
+        this.setState({componentToBeRendered: <Reviews />, open: true})
     }
 
     toggleContact () {
-        this.setState({componentToBeRendered: <Contact />})
+        this.falsifyOpen()
+        this.setState({componentToBeRendered: <Contact />, open: true})
     }
 
      togglePicture () {
-        this.setState({componentToBeRendered: <Picture />})
+        this.falsifyOpen()
+        this.setState({componentToBeRendered: <Picture />, open: true})
     }
 
-    toggleProjects () {
-        this.setState({componentToBeRendered: <Projects />})
-    }
+    // onElementChange() {
+    //     var a = this.state.componentToBeRendered
+    //     if (a !== this.state.componentToBeRendered){
+    //         return true
+    //     }
+    // detects when element is changed, and allows fade to happen
+    // }
 
 
     render (){
         return (
             <div>
-            <ButtonToolbar>
-                <Button className="black-button" bsStyle="warning" bsSize="large" onClick={this.toggleAbout} >
-                    About
-                </Button>
-                <Button className="black-button" bsStyle="warning" bsSize="large" onClick={this.toggleContact} >
-                    Contact
-                </Button>
+                <ButtonToolbar>
 
-                <Button className="black-button" bsStyle="warning" bsSize="large" >
-                    ALG
-                </Button>
-                <Button className="black-button" bsStyle="warning" bsSize="large" onClick={this.toggleReviews} >
-                    Reviews
-                </Button>
-                <Button className="black-button" bsStyle="warning" bsSize="large" onClick={this.togglePicture} >
-                    Pictures
-                </Button>
-                <Button className="black-button" bsStyle="warning" bsSize="large" onClick={this.toggleProjects} >
-                    Projects
-                </Button>
-            </ButtonToolbar> 
-            
-                <div className="middle-main-div">
-                    {this.state.componentToBeRendered}
-                </div>
+                    <Button className="black-button" bsStyle="warning" bsSize="large" onClick={this.toggleAbout} >
+                        About
+                    </Button>
+
+                    <Button className="black-button" bsStyle="warning" bsSize="large" onClick={this.toggleContact} >
+                        Contact
+                    </Button>
+
+                    <DropdownButton className="black-button" bsStyle="warning" bsSize="large" key={1} title={"Algorithms"}>
+                        <MenuItem eventKey="1">Project Euler 1</MenuItem>
+                        <MenuItem eventKey="2">Project Euler 2</MenuItem>
+                        <MenuItem eventKey="3">Project Euler 3</MenuItem>
+                        <MenuItem eventKey="4">Project Euler 5</MenuItem>
+                        <MenuItem eventKey="5">Project Euler 6</MenuItem>
+                    </DropdownButton>
+                    
+                    <DropdownButton className="black-button" bsStyle="warning" bsSize="large" key={2} title={"Reviews"}>
+                        <MenuItem eventKey="1">POODR - Object Oriented Design</MenuItem>
+                        <MenuItem eventKey="2">POODR - Designing Classes with a Single Responsibility</MenuItem>
+                        <MenuItem eventKey="3">jQuery in Action - Bringing Pages to Life with jQuery</MenuItem>
+                        <MenuItem eventKey="4">React Docs - Animation</MenuItem>
+                    </DropdownButton>
+                
+                    <DropdownButton className="black-button" bsStyle="warning" bsSize="large" key={3} title={"Projects"}>
+                        <MenuItem eventKey="1">TwitchRuns</MenuItem>
+                        <MenuItem eventKey="2">King of The Page</MenuItem>
+                        <MenuItem eventKey="3">a3.world</MenuItem>
+                        <MenuItem eventKey="4">Linques</MenuItem>
+                        <MenuItem eventKey="5">Cat Fact!</MenuItem>
+                    </DropdownButton>
+
+                    <Button className="black-button" bsStyle="warning" bsSize="large" onClick={this.togglePicture} >
+                        Pictures
+                    </Button>
+
+                </ButtonToolbar> 
+                
+                <Fade in={this.state.open}>
+                    <div className="middle-main-div">
+                        {this.state.componentToBeRendered}
+                    </div>
+                </Fade >
             </div>
         )
     }
