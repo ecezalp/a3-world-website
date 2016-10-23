@@ -14,9 +14,6 @@ class App extends Component {
            <div className="central-div">
              <ButtonBar />
           </div>
-          <div>
-              {this.props.children}
-          </div>
       </div>
     )
   }
