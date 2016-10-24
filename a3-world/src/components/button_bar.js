@@ -1,184 +1,94 @@
 import React from 'react'
-import { Button, DropdownButton, MenuItem, ButtonToolbar, Popover, OverlayTrigger, Transition } from 'react-bootstrap'
+import { Button, DropdownButton, MenuItem, ButtonToolbar, Popover, OverlayTrigger, Transition, Fade } from 'react-bootstrap'
+
 import About from './about_me'
 import Contact from './contact'
 import Algorithms from './algorithms'
 import Reviews from './reviews'
-import Picture from './picture'
+import Pictures from './pictures'
 import Projects from './projects'
 
+import {browserHistory} from 'react-router'
+
+
+/*      issues to be solved: 
+    1 - Unable to render specific component when onClick-ed on a DropDown MenuItem - Infinite Loop
+        1a - Unable to pass the specific event key as a prop to the component to be rendered
+        1b - Unable to setState to componentToBeRendered (because it is mid-rendering?) && same thing when setState is wrapped in a handleClick function
+    2 - Post request to localhost:3000 (where the node.js backend lives) hits as {}. because of "mode: no-cors"? many variations with x-encoded (something like that) on Postman also failed. 
+    3 - Animations are not rendered correctly (I thought my falsifyOpen would fix it, works only with first animation)
+    4 - general styling .. 
+    5 - fetching images correctly (something wrong with fetching from correct directory? )
+        
+*/
 
 class ButtonBar extends React.Component {
 
-        constructor (props) {
-        super(props)
-        this.state = {componentToBeRendered: null}
-        this.toggleAbout = this.toggleAbout.bind(this)
-        this.toggleContact = this.toggleContact.bind(this)
-        // this.toggleAlgorithms = this.toggleAlgorithms.bind(this)
-        this.toggleReviews = this.toggleReviews.bind(this)
-        this.togglePicture = this.togglePicture.bind(this)
-        this.toggleProjects = this.toggleProjects.bind(this)
+    constructor () {
+        super ()
+        this.goToRoute = this.goToRoute.bind(this)
     }
 
-    toggleAbout () {
-        this.setState({componentToBeRendered: <About />})
+    goToRoute (routeName, routeId) {
+        if (routeId) {
+            var address = "/" + routeName + "/" + routeId
+            return (browserHistory.push(address))
+        }
+        else {
+            return (browserHistory.push("/" + routeName))
+        }
     }
-
-    //  toggleAlgorithms (algNum) {
-    //     this.setState({componentToBeRendered: <Algorithms />})
-    //  <img src="../assets/algorithms/{this.props.algNum}" />
-    // }
-
-    toggleReviews () {
-        this.setState({componentToBeRendered: <Reviews />})
-    }
-
-    toggleContact () {
-        this.setState({componentToBeRendered: <Contact />})
-    }
-
-     togglePicture () {
-        this.setState({componentToBeRendered: <Picture />})
-    }
-
-    toggleProjects () {
-        this.setState({componentToBeRendered: <Projects />})
-    }
-
 
     render (){
         return (
             <div>
-            <ButtonToolbar>
-                <Button className="black-button" bsStyle="warning" bsSize="large" onClick={this.toggleAbout} >
-                    About
-                </Button>
-                <Button className="black-button" bsStyle="warning" bsSize="large" onClick={this.toggleContact} >
-                    Contact
-                </Button>
 
-                <Button className="black-button" bsStyle="warning" bsSize="large" >
-                    ALG
-                </Button>
-                <Button className="black-button" bsStyle="warning" bsSize="large" onClick={this.toggleReviews} >
-                    Reviews
-                </Button>
-                <Button className="black-button" bsStyle="warning" bsSize="large" onClick={this.togglePicture} >
-                    Pictures
-                </Button>
-                <Button className="black-button" bsStyle="warning" bsSize="large" onClick={this.toggleProjects} >
-                    Projects
-                </Button>
-            </ButtonToolbar> 
-            
-                <div className="middle-main-div">
-                    {this.state.componentToBeRendered}
-                </div>
+                <ButtonToolbar>
+
+                    <Button className="black-button" bsStyle="warning" bsSize="large" onClick={()=>this.goToRoute("about")} >
+                        About
+                    </Button>
+
+                    <Button className="black-button" bsStyle="warning" bsSize="large" onClick={()=>this.goToRoute("contact")} >
+                        Contact
+                    </Button>
+
+                    <DropdownButton className="black-button" bsStyle="warning" bsSize="large" key={1} title={"Algorithms"}>
+                        <MenuItem onClick={()=>this.goToRoute("algorithms", "0")}> Project Euler Description </MenuItem>
+                        <MenuItem onClick={()=>this.goToRoute("algorithms", "1")}> Euler 1 </MenuItem>
+                        <MenuItem onClick={()=>this.goToRoute("algorithms", "2")}> Euler 2 </MenuItem>
+                        <MenuItem onClick={()=>this.goToRoute("algorithms", "3")}> Euler 3 </MenuItem>
+                        <MenuItem onClick={()=>this.goToRoute("algorithms", "4")}> Euler 4 </MenuItem>
+                        <MenuItem onClick={()=>this.goToRoute("algorithms", "5")}> Euler 5 </MenuItem>
+                        <MenuItem onClick={()=>this.goToRoute("algorithms", "6")}> Euler 6 </MenuItem>
+
+                    </DropdownButton>
+                    
+                    <DropdownButton className="black-button" bsStyle="warning" bsSize="large" key={2} title={"Reviews"}>
+                        <MenuItem onClick={()=>this.goToRoute("reviews", "1")}> POODR - Object Oriented Design </MenuItem>
+                        <MenuItem onClick={()=>this.goToRoute("reviews", "2")}> POODR - Designing Classes with a Single Responsibility </MenuItem>
+                        <MenuItem onClick={()=>this.goToRoute("reviews", "3")}> jQuery in Action - Bringing Pages to Life with jQuery </MenuItem>
+                        <MenuItem onClick={()=>this.goToRoute("reviews", "4")}> React Docs - Animation </MenuItem>
+                    </DropdownButton>
+                
+                    <DropdownButton className="black-button" bsStyle="warning" bsSize="large" key={3} title={"Projects"}>
+                        <MenuItem onClick={()=>this.goToRoute("projects", "1")}> TwitchRuns </MenuItem>
+                        <MenuItem onClick={()=>this.goToRoute("projects", "2")}> King of The Page </MenuItem>
+                        <MenuItem onClick={()=>this.goToRoute("projects", "3")}> a3.world </MenuItem>
+                        <MenuItem onClick={()=>this.goToRoute("projects", "4")}> Linques </MenuItem>
+                        <MenuItem onClick={()=>this.goToRoute("projects", "5")}> Cat Fact! </MenuItem>
+                    </DropdownButton>
+
+                    <Button className="black-button" bsStyle="warning" bsSize="large" onClick={()=>this.goToRoute("pictures")} >
+                        Pictures
+                    </Button>
+
+                </ButtonToolbar> 
+                
+              
             </div>
         )
     }
 }
 
 export default ButtonBar
-
-
-
-
-
-
-
-
-
-//     render(){
-
-//     return (
-    
-
-//         <Button bsStyle='primary' onClick={this.toggle}>
-//           dismiss
-//         </Button>
-//       </div>
-//     );
-//   }
-
-// }
-
-
-
-
-
-
-
-
-
-// <div classname="middle-main-div">
-          
-//           </div>
-
-
-
-
-
-
-
-    // const popoverHoverFocus = (
-    // <Popover className="popover-child" id="popover-trigger-hover-focus" >
-    //     <strong>Ece Özalp</strong> is a New York based web developer. She has completed Flatiron School's Web Development Immersive in 2016, Javascript and Ruby on Rails program. Ece loves programming. Her dream is to become a senior developer. She has experience with Ruby on Rails, Javascript, React.js, Redux, SQL, ActiveRecord, HTML5/CSS, jQuery, Git, Heroku.
-    // </Popover>
-    // );    
-
-    // return(
-    //     <ButtonToolbar className="button-toolbar" float="center">
-    //         <OverlayTrigger className="popover-parent" trigger={['hover', 'focus']} placement="bottom" overlay={popoverHoverFocus}>
-    //             <Button className="black-button" bsStyle="warning" bsSize="large" >
-    //                 About
-    //             </Button>
-    //         </OverlayTrigger>
-    //     <Button className="black-button" bsStyle="warning" bsSize="large" >
-    //         Contact
-    //     </Button>
-    //     <Button className="black-button" bsStyle="warning" bsSize="large" >
-    //         Algorithms
-    //     </Button>
-    //     <Button className="black-button" bsStyle="warning" bsSize="large" >
-    //         Reviews
-    //     </Button>
-        
-    //     </ButtonToolbar>
-    // )
-
-
-    // constructor (props) {
-    //     super(props)
-    //     this.state = { aboutIn: false };
-    //     this.aboutHover = this.aboutHover.bind(this)
-    // }
-
-    // toggle(){
-    //     return this.setState({ in: !this.state.aboutIn });
-    // }
-
-    // aboutHover (){
-    //     return (
-    //             <div className='transition-example'>
-    //                 <p>Create your own declarative fade transition</p>
-    //                     <Transition
-    //                         in={this.state.aboutIn}
-    //                         timeout={200}
-    //                         className='fade'
-    //                         enteredClassName='in'
-    //                         enteringClassName='in'>
-    //                         <div className='panel panel-default'>
-    //                             <div className='panel-body'>
-    //                                 Anim pariatur cliche reprehenderit, enim eiusmod high life
-    //                                 accusamus terry richardson ad squid.
-    //                                 Nihil anim keffiyeh helvetica, craft beer labore wes
-    //                                 anderson cred nesciunt sapiente ea proident.
-    //                             </div>
-    //                         </div>
-    //                     </Transition>
-    //             </div>
-    //     )
-    // }
-    // onMouseover={this.aboutHover()}
