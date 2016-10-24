@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, ButtonToolbar, Popover, OverlayTrigger, Transition } from 'react-bootstrap'
 
-export default function Picture () {
+export default function Pictures () {
     const myPictureUrl = 'http://i.imgur.com/lqBzDD7.jpg' 
     const myPictureUrlTwo = "http://i.imgur.com/fZ33PwW.jpg"
     return ( 
