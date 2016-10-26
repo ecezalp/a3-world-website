@@ -10,17 +10,15 @@ class App extends Component {
     return (
       <div>
           <div className="top-central-div">
-            <CentralAnimation />
+               <ButtonBar />
           </div>
            <div className="central-div">
-             <ButtonBar />
+          
           </div>
 
-         
             <div className="middle-main-div">
                 {this.props.children}
             </div>
-      
 
       </div>
     )
@@ -28,6 +26,9 @@ class App extends Component {
 }
 
 export default App;
+
+      
+//  <CentralAnimation />
 
 
 

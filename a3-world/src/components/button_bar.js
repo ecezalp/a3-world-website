@@ -11,17 +11,6 @@ import Projects from './projects'
 import {browserHistory} from 'react-router'
 
 
-/*      issues to be solved: 
-    1 - Unable to render specific component when onClick-ed on a DropDown MenuItem - Infinite Loop
-        1a - Unable to pass the specific event key as a prop to the component to be rendered
-        1b - Unable to setState to componentToBeRendered (because it is mid-rendering?) && same thing when setState is wrapped in a handleClick function
-    2 - Post request to localhost:3000 (where the node.js backend lives) hits as {}. because of "mode: no-cors"? many variations with x-encoded (something like that) on Postman also failed. 
-    3 - Animations are not rendered correctly (I thought my falsifyOpen would fix it, works only with first animation)
-    4 - general styling .. 
-    5 - fetching images correctly (something wrong with fetching from correct directory? )
-        
-*/
-
 class ButtonBar extends React.Component {
 
     constructor () {
@@ -54,7 +43,6 @@ class ButtonBar extends React.Component {
                     </Button>
 
                     <DropdownButton className="black-button" bsStyle="warning" bsSize="large" key={1} title={"Algorithms"}>
-                        <MenuItem onClick={()=>this.goToRoute("algorithms", "0")}> Project Euler Description </MenuItem>
                         <MenuItem onClick={()=>this.goToRoute("algorithms", "1")}> Euler 1 </MenuItem>
                         <MenuItem onClick={()=>this.goToRoute("algorithms", "2")}> Euler 2 </MenuItem>
                         <MenuItem onClick={()=>this.goToRoute("algorithms", "3")}> Euler 3 </MenuItem>
