@@ -1,8 +1,12 @@
 import { combineReducers } from 'redux';
-// import runsReducer from './runs_reducer'
+import algorithmsReducer from './algorithms_reducer'
+import projectsReducer from './projects_reducer'
+import reviewsReducer from './reviews_reducer'
 
 const rootReducer =  combineReducers({
-//   runs: runsReducer,
+    algorithms: algorithmsReducer,
+    projects: projectsReducer,
+    reviews: reviewsReducer
 })
 
 export default rootReducer;
