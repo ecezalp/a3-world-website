@@ -49,7 +49,6 @@ class ButtonBar extends React.Component {
                         <MenuItem onClick={()=>this.goToRoute("algorithms", "4")}> Euler 4 </MenuItem>
                         <MenuItem onClick={()=>this.goToRoute("algorithms", "5")}> Euler 5 </MenuItem>
                         <MenuItem onClick={()=>this.goToRoute("algorithms", "6")}> Euler 6 </MenuItem>
-
                     </DropdownButton>
                     
                     <DropdownButton className="black-button" bsStyle="warning" bsSize="large" key={2} title={"Reviews"}>
