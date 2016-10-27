@@ -1,32 +1,37 @@
 import React from 'react'
-import { Button, ButtonToolbar, Popover, OverlayTrigger, Transition } from 'react-bootstrap'
+
+import * as actions from '../actions'
+import {bindActionCreators} from 'redux'
+import {connect} from 'react-redux'
+
+
 
 class Reviews extends React.Component {
 
     constructor (props) {
         super(props)
-        this.state = {aboutButton: false}
-        this.toggle = this.toggle.bind(this)
-        this.reviewsText = this.reviewsText.bind(this)
-    }
-
-    toggle () {
-        this.setState.aboutButton = {aboutButton: !this.state.aboutButton}
-    }
-
-    reviewsText () {
-        return "Hellooooo"
     }
 
     render() {
         return (
             <div>
-                <Button className="black-button" bsStyle="warning" bsSize="large" onClick={this.toggle} >
-                    Reviews
-                </Button>
+                <h1> test 1 </h1>
             </div>
         )
     }  
 }
 
-export default Reviews
+function mapStateToProps(state, ownProps) {
+    return {
+        reviews: state.reviews
+    }
+}
+
+function mapDispatchToProps(dispatch){
+   return {actions: bindActionCreators(actions, dispatch)}
+}
+
+ const componentCreator = connect(mapStateToProps, mapDispatchToProps)
+
+ export default componentCreator(Reviews)
+
