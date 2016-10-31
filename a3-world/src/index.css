@@ -97,6 +97,21 @@ body {
   right: 27%;
   width: 638px;
   font-family: 'Menlo';
+  background-color:rgba(255,182,193, 0.7); 
+  font-size: 16px;
+  text-align: center;
+}
+
+.centerButton {
+  margin: 20px 0px 0px 300px;
+}
+
+.pics-div {
+  position: fixed;
+  top: 20%;
+  right: 27%;
+  width: 638px;
+  font-family: 'Menlo';
   background-color:rgba(255,182,193, 0.5); 
   font-size: 16px;
 }

@@ -13,10 +13,13 @@ class Algorithms extends React.Component {
     render() {
         return (
             <div>
+
                 <h4> {this.currentAlg().description} </h4>
+
                 <div className="algdiv">
-                <img src={this.currentAlg().image_links} />
+                    <img src={this.currentAlg().image_links} />
                 </div>
+
             </div>
         )
     }  
