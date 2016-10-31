@@ -10,13 +10,22 @@ class Algorithms extends React.Component {
         return (currentAlgorithm)
     }
 
+    capitalizedTitle() {
+        return this.currentAlg().title.charAt(0).toUpperCase() + this.currentAlg().title.slice(1)
+    }
+
     render() {
         return (
             <div>
+                <br/>
+                    <a href="https://projecteuler.net/"><h4> {this.capitalizedTitle()}</h4> </a>
+
                 <h4> {this.currentAlg().description} </h4>
+
                 <div className="algdiv">
-                <img src={this.currentAlg().image_links} />
+                    <img src={this.currentAlg().image_links} />
                 </div>
+
             </div>
         )
     }  

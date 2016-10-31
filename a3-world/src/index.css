@@ -97,14 +97,43 @@ body {
   right: 27%;
   width: 638px;
   font-family: 'Menlo';
-  background-color:rgba(255,182,193, 0.5); 
+  background-color:rgba(255,182,193, 0.7); 
   font-size: 16px;
+  text-align: center;
+}
+
+.centerButton {
+  margin: 20px 0px 0px 300px;
+}
+
+.languages {
+ -webkit-column-count: 2;
+  -moz-column-count: 2; 
+    column-count: 2;
+     margin: 0px 100px 0px 100px;
+}
+
+.schools {
+    text-align: left;
+    margin: 0px 10px 0px 10px;
+}
+
+.pic-div {
+   -webkit-column-count: 2;
+  -moz-column-count: 2; 
+    column-count: 2;
 }
 
 .middle-main-div img {
   position: relative;
   margin: 20px 40px 20px 40px;
 }
+
+.centerButtonTwo {
+      margin: -20px 0px 40px 450px;
+}
+
+
 /*
 .top-middle-left-div {
   position: absolute;
@@ -142,7 +171,5 @@ body {
  
   font-family: 'Menlo';
   ; 
-  -webkit-column-count: 2;
-  -moz-column-count: 2; 
-    column-count: 2;
+ 
   font-size: 16px;*/
