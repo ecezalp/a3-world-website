@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from 'react-bootstrap'
+import { Button, ButtonToolbar } from 'react-bootstrap'
 
 class Contact extends React.Component {
 
@@ -34,24 +34,36 @@ class Contact extends React.Component {
             },
             body: JSON.stringify({name: this.state.name, message: this.state.message})
         })
-        debugger
-        // console.log("hit send text")
-        // 
     }
 
     contactText () {
         return (
             <form>
+            <br/>
                 <label> Your Name </label>
+                    <br/>
                     <input type="text" className="submitter-name" placeholder="Ece Özalp" onChange={this.handleNameChange}/>
+                    <br/>
+                    <br/>
                 <label> Your Message </label>
-                    <textarea className="text-message-text" rows="4" cols="15" placeholder="Enter your message here" onChange={this.handleMessageChange}/> 
-                <Button className="black-button" bsStyle="warning" bsSize="small" onClick={this.sendEmail} >
-                    Send Email
-                </Button>
-                <Button className="black-button" bsStyle="warning" bsSize="small" onClick={this.sendText} >
-                    Send Text
-                </Button>
+                    <br/>
+                    <textarea className="text-message-text" rows="5" cols="30" placeholder="Enter your message here" onChange={this.handleMessageChange}/> 
+                    <br/>
+                    <br/>
+                    <br/>
+
+                <div className="centerButtonTwo">
+                    <ButtonToolbar>
+                        <Button className="black-button" bsStyle="warning" bsSize="small" onClick={this.sendEmail} >
+                            Send Email
+                        </Button>
+
+                        <Button className="black-button" bsStyle="warning" bsSize="small" onClick={this.sendText} >
+                            Send Text
+                        </Button>
+                    </ButtonToolbar>
+                </div>
+
             </form>
         )
     }

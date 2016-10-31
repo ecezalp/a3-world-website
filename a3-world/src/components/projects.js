@@ -4,7 +4,7 @@ import * as actions from '../actions'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 
-import {ButtonBar, Button} from 'react-bootstrap'
+import {Button} from 'react-bootstrap'
 
 
 
