@@ -1,30 +1,38 @@
 import React from 'react'
-import one from '../assets/algorithms/one.png'
-import six from '../assets/algorithms/six.png'
+import * as actions from '../actions'
+import {bindActionCreators} from 'redux'
+import {connect} from 'react-redux'
 
 class Algorithms extends React.Component {
-   
-    constructor () {
-        super()
-        this.findPic = this.findPic.bind(this)
+
+    currentAlg() {
+        var currentAlgorithm = this.props.algorithms.find( (algorithm) => algorithm.id.toString() === this.props.params.id)
+        return (currentAlgorithm)
     }
 
-    algorithms() {
-        const algorithms = [{id: 1, title: "hey", pic: one, desc: "hehehehehe"}, {id: 6, title: "yaa", pic: six, desc: "aasssaa"} ]
-        return algorithms
+    render() {
+        return (
+            <div>
+                <h4> {this.currentAlg().description} </h4>
+                <div className="algdiv">
+                <img src={this.currentAlg().image_links} />
+                </div>
+            </div>
+        )
+    }  
+}
+
+function mapStateToProps(state, ownProps) {
+    return {
+        algorithms: state.algorithms
     }
+}
 
+function mapDispatchToProps(dispatch){
+   return {actions: bindActionCreators(actions, dispatch)}
+}
 
-   findPic () {
-       var currentId = this.props.params.id
-        return this.algorithms().find( (algorithm)=> algorithm["id"] === currentId).pic
-    }
+ const componentCreator = connect(mapStateToProps, mapDispatchToProps)
 
-   render () {
-       return (
-           {}
-       )
-   }
-}  
+ export default componentCreator(Algorithms)
 
-export default Algorithms
