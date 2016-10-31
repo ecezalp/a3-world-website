@@ -106,6 +106,18 @@ body {
   margin: 20px 0px 0px 300px;
 }
 
+.languages {
+ -webkit-column-count: 2;
+  -moz-column-count: 2; 
+    column-count: 2;
+     margin: 0px 100px 0px 100px;
+}
+
+.schools {
+    text-align: left;
+    margin: 0px 10px 0px 10px;
+}
+
 .pics-div {
   position: fixed;
   top: 20%;
@@ -157,7 +169,5 @@ body {
  
   font-family: 'Menlo';
   ; 
-  -webkit-column-count: 2;
-  -moz-column-count: 2; 
-    column-count: 2;
+ 
   font-size: 16px;*/
