@@ -35,6 +35,7 @@ function About () {
                         <li> BA Literature && Political Science - Duke University</li>
                     </ul>
                 </div>
+                <br/>
             </h4>
 
            

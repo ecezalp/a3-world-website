@@ -42,12 +42,12 @@ class Contact extends React.Component {
             <br/>
                 <label> Your Name </label>
                     <br/>
-                    <input type="text" className="submitter-name" placeholder="Ece Özalp" onChange={this.handleNameChange}/>
+                    <input type="text" className="submitter-name" onChange={this.handleNameChange}/>
                     <br/>
                     <br/>
                 <label> Your Message </label>
                     <br/>
-                    <textarea className="text-message-text" rows="5" cols="30" placeholder="Enter your message here" onChange={this.handleMessageChange}/> 
+                    <textarea className="text-message-text" rows="5" cols="30" onChange={this.handleMessageChange}/> 
                     <br/>
                     <br/>
                     <br/>
