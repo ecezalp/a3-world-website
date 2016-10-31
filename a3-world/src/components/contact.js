@@ -9,7 +9,7 @@ class Contact extends React.Component {
         this.handleMessageChange = this.handleMessageChange.bind(this)
         this.sendEmail = this.sendEmail.bind(this)
         this.sendText = this.sendText.bind(this)
-        this.state = {name: "", message: ""}
+        this.state = {name: "", message: "", thanks: false}
     }
 
     handleNameChange (event) {
@@ -20,20 +20,54 @@ class Contact extends React.Component {
         this.setState({message: event.target.value})
     }
 
-    sendEmail () {
-        console.log("hit send email")
-    }
-
      sendText () {
        fetch("http://localhost:3000/text", {
             method: 'post',
-            mode: 'no-cors',
             headers: {
             "Content-type": "application/json",
             "Accepts": "application/json"
             },
             body: JSON.stringify({name: this.state.name, message: this.state.message})
         })
+    }
+
+    sendEmail () {
+       fetch("http://localhost:3000/email", {
+            method: 'post',
+            headers: {
+            "Content-type": "application/json",
+            "Accepts": "application/json"
+            },
+            body: JSON.stringify({name: this.state.name, message: this.state.message})
+        })
+    }
+
+    thanksForText () {
+        this.setState({thanks: "Thank you for the text!"})
+    }
+
+     thanksForEmail () {
+        this.setState({thanks: "Thank you for the email!"})
+    }
+
+    textHandler () {
+        if (!this.state.name || !this.state.message) {
+            this.setState({thanks: "Please fill out both fields"})
+        }
+        else {
+            this.sendText()
+            this.thanksForText()
+        }
+    }
+
+    emailHandler () {
+        if (!this.state.name || !this.state.message) {
+            this.setState({thanks: "Please fill out both fields"})
+        }
+        else {
+            this.sendEmail()
+            this.thanksForEmail()
+        }   
     }
 
     contactText () {
@@ -54,16 +88,20 @@ class Contact extends React.Component {
 
                 <div className="centerButtonTwo">
                     <ButtonToolbar>
-                        <Button className="black-button" bsStyle="warning" bsSize="small" onClick={this.sendEmail} >
+                        <Button className="black-button" bsStyle="warning" bsSize="small"  onClick={ () => this.emailHandler() } >
                             Send Email
                         </Button>
 
-                        <Button className="black-button" bsStyle="warning" bsSize="small" onClick={this.sendText} >
+                        <Button className="black-button" bsStyle="warning" bsSize="small"  onClick={ () => this.textHandler() } >
                             Send Text
                         </Button>
                     </ButtonToolbar>
                 </div>
 
+                <div>   
+                    {this.state.thanks} 
+                </div>
+                <br/>
             </form>
         )
     }
