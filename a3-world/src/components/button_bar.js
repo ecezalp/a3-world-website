@@ -1,12 +1,11 @@
 import React from 'react'
-import { Button, DropdownButton, MenuItem, ButtonToolbar, Popover, OverlayTrigger, Transition, Fade } from 'react-bootstrap'
 
-import About from './about_me'
-import Contact from './contact'
-import Algorithms from './algorithms'
-import Reviews from './reviews'
-import Pictures from './pictures'
-import Projects from './projects'
+import * as actions from '../actions'
+import {bindActionCreators} from 'redux'
+import {connect} from 'react-redux'
+
+import { Button, DropdownButton, MenuItem, ButtonToolbar} from 'react-bootstrap'
+// Popover, OverlayTrigger, Transition, Fade 
 
 import {browserHistory} from 'react-router'
 
@@ -28,45 +27,63 @@ class ButtonBar extends React.Component {
         }
     }
 
+    buttonMapperReviews () {
+        if (this.props.reviews[0]){
+           return this.props.reviews.map( (review) => 
+                (<MenuItem onClick={()=>this.goToRoute("reviews", review.id )}> {review.title} </MenuItem>)
+            )
+        }
+    }
+
+    buttonMapperProjects () {
+        if (this.props.projects[0]){
+           return this.props.projects.map( (project) => 
+                (<MenuItem onClick={()=>this.goToRoute("projects", project.id )}> {project.title} </MenuItem>)
+            )
+        }
+    }
+
+     buttonMapperAlgorithms () {
+        if (this.props.algorithms[0]){
+           return this.props.algorithms.map( (algorithm) => 
+                (<MenuItem onClick={()=>this.goToRoute("algorithms", algorithm.id )}> {algorithm.title} </MenuItem>)
+            )
+        }
+    }
+
+
+
+
+
+
+
     render (){
         return (
             <div>
 
                 <ButtonToolbar>
 
-                    <Button className="black-button" bsStyle="warning" bsSize="large" onClick={()=>this.goToRoute("about")} >
+                    <Button className="black-button" bsSize="large" onClick={()=>this.goToRoute("about")} >
                         About
                     </Button>
 
-                    <Button className="black-button" bsStyle="warning" bsSize="large" onClick={()=>this.goToRoute("contact")} >
+                    <Button className="black-button" bsSize="large" onClick={()=>this.goToRoute("contact")} >
                         Contact
                     </Button>
 
-                    <DropdownButton className="black-button" bsStyle="warning" bsSize="large" key={1} title={"Algorithms"}>
-                        <MenuItem onClick={()=>this.goToRoute("algorithms", "1")}> Euler 1 </MenuItem>
-                        <MenuItem onClick={()=>this.goToRoute("algorithms", "2")}> Euler 2 </MenuItem>
-                        <MenuItem onClick={()=>this.goToRoute("algorithms", "3")}> Euler 3 </MenuItem>
-                        <MenuItem onClick={()=>this.goToRoute("algorithms", "4")}> Euler 4 </MenuItem>
-                        <MenuItem onClick={()=>this.goToRoute("algorithms", "5")}> Euler 5 </MenuItem>
-                        <MenuItem onClick={()=>this.goToRoute("algorithms", "6")}> Euler 6 </MenuItem>
+                    <DropdownButton className="black-button" bsSize="large" key={1} title={"Algorithms"}>
+                        {this.buttonMapperAlgorithms()}
                     </DropdownButton>
                     
-                    <DropdownButton className="black-button" bsStyle="warning" bsSize="large" key={2} title={"Reviews"}>
-                        <MenuItem onClick={()=>this.goToRoute("reviews", "1")}> POODR - Object Oriented Design </MenuItem>
-                        <MenuItem onClick={()=>this.goToRoute("reviews", "2")}> POODR - Designing Classes with a Single Responsibility </MenuItem>
-                        <MenuItem onClick={()=>this.goToRoute("reviews", "3")}> jQuery in Action - Bringing Pages to Life with jQuery </MenuItem>
-                        <MenuItem onClick={()=>this.goToRoute("reviews", "4")}> React Docs - Animation </MenuItem>
+                    <DropdownButton className="black-button" bsSize="large" key={2} title={"Reviews"}>
+                        {this.buttonMapperReviews()}
                     </DropdownButton>
                 
-                    <DropdownButton className="black-button" bsStyle="warning" bsSize="large" key={3} title={"Projects"}>
-                        <MenuItem onClick={()=>this.goToRoute("projects", "1")}> TwitchRuns </MenuItem>
-                        <MenuItem onClick={()=>this.goToRoute("projects", "2")}> King of The Page </MenuItem>
-                        <MenuItem onClick={()=>this.goToRoute("projects", "3")}> a3.world </MenuItem>
-                        <MenuItem onClick={()=>this.goToRoute("projects", "4")}> Linques </MenuItem>
-                        <MenuItem onClick={()=>this.goToRoute("projects", "5")}> Cat Fact! </MenuItem>
+                    <DropdownButton className="black-button" bsSize="large" key={3} title={"Projects"}>
+                        {this.buttonMapperProjects()}
                     </DropdownButton>
 
-                    <Button className="black-button" bsStyle="warning" bsSize="large" onClick={()=>this.goToRoute("pictures")} >
+                    <Button className="black-button" bsSize="large" onClick={()=>this.goToRoute("pictures")} >
                         Pictures
                     </Button>
 
@@ -78,4 +95,19 @@ class ButtonBar extends React.Component {
     }
 }
 
-export default ButtonBar
+function mapStateToProps(state, ownProps) {
+    return {
+        algorithms: state.algorithms,
+        reviews: state.reviews,
+        projects: state.projects
+    }
+}
+
+function mapDispatchToProps(dispatch){
+   return {actions: bindActionCreators(actions, dispatch)}
+}
+
+ const componentCreator = connect(mapStateToProps, mapDispatchToProps)
+
+ export default componentCreator(ButtonBar)
+

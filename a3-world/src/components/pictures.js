@@ -6,12 +6,15 @@ export default function Pictures () {
     const myPictureUrlTwo = "http://i.imgur.com/fZ33PwW.jpg"
     return ( 
         <div className="pic-div"> 
+        <br/><br/><br/><br/>
             <div>
                 <img src={myPictureUrl} height="300px" witdh="200px" />
             </div>
+             <br/><br/><br/><br/> <br/><br/><br/><br/>
             <div>
                 <img src={myPictureUrlTwo} height="300px" width="250px"/> 
             </div>
+            <br/><br/><br/><br/>
         </div>
     )
 }

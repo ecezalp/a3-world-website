@@ -7,39 +7,24 @@ function About () {
 
     return (
         <div>
-            <h3> Ece Özalp</h3>
-            <h4> NYC  && Istanbul </h4>
-            <h4> Full Stack Web Developer</h4>
-             <div className="languages">
-                <h5>
-                    <ul>
-                        <li> Ruby on Rails </li>
-                        <li> React.js </li>
-                        <li> ActiveRecord </li>
-                        <li> jQuery </li>
-                        <li> SQL </li>
-                        <li> Javascript </li>
-                        <li> Redux </li>
-                        <li> HTML / CSS </li>
-                        <li> Heroku </li>
-                        <li> Git </li>
-                    </ul>
-                </h5>
-            </div>
                 <br/>
-            <h4> 
-                <div className="schools">
-                    <ul> 
-                        <li> Web Dev Immersive  ------------------ Flatiron School </li>
-                        <li> MFA Creative Writing --------------- The New School </li>
-                        <li> BA Literature && Political Science - Duke University</li>
-                    </ul>
-                </div>
+            <h2> Ece Özalp</h2>
                 <br/>
-            </h4>
-
-           
-
+            <h3> Full Stack Web Developer</h3>
+            <h4> Ruby on Rails, Javascript, React.js, Redux, ActiveRecord, </h4>
+            <h4> jQuery, SQL, HTML / CSS, Heroku, Git, Node.js</h4> 
+                 <br/> 
+            <h3> Web Dev Immersive (Rails & Javascript) </h3>
+            <h4> Flatiron School 2016 </h4>
+                 <br/>
+            <h3> MFA Creative Writing </h3>
+            <h4> The New School 2016 </h4>
+                 <br/>
+            <h3> BA Literature && BA Political Science && Minor Italian </h3>
+            <h4> Duke University 2012 </h4>
+                <br/>
+                <br/>
+                <br/>
         </div>
     ) 
 }

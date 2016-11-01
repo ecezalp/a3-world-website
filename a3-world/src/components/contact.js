@@ -9,11 +9,15 @@ class Contact extends React.Component {
         this.handleMessageChange = this.handleMessageChange.bind(this)
         this.sendEmail = this.sendEmail.bind(this)
         this.sendText = this.sendText.bind(this)
-        this.state = {name: "", message: "", thanks: false}
+        this.state = {name: "", message: "", numberPhone: "", thanks: "Please enter your name and a message"}
     }
 
     handleNameChange (event) {
         this.setState({name: event.target.value})
+    }
+
+    handleNumberPhoneChange (event) {
+        this.SetState({numberPhone: event.target.value})
     }
 
     handleMessageChange (event) {
@@ -27,7 +31,7 @@ class Contact extends React.Component {
             "Content-type": "application/json",
             "Accepts": "application/json"
             },
-            body: JSON.stringify({name: this.state.name, message: this.state.message})
+            body: JSON.stringify({name: this.state.name, message: this.state.message, numberPhone: this.state.numberPhone})
         })
     }
 
@@ -38,7 +42,7 @@ class Contact extends React.Component {
             "Content-type": "application/json",
             "Accepts": "application/json"
             },
-            body: JSON.stringify({name: this.state.name, message: this.state.message})
+            body: JSON.stringify({name: this.state.name, message: this.state.message, numberPhone: this.state.numberPhone})
         })
     }
 
@@ -52,7 +56,7 @@ class Contact extends React.Component {
 
     textHandler () {
         if (!this.state.name || !this.state.message) {
-            this.setState({thanks: "Please fill out both fields"})
+            this.setState({thanks: "Please fill out the name and the message fields"})
         }
         else {
             this.sendText()
@@ -74,33 +78,41 @@ class Contact extends React.Component {
         return (
             <form>
             <br/>
-                <label> Your Name </label>
+              <br/>
+                <h4> Your Name </h4>
+                    <textarea type="text" className="submitter-name" rows="1" cols="50" placeholder="Required" onChange={this.handleNameChange}/>
                     <br/>
-                    <input type="text" className="submitter-name" onChange={this.handleNameChange}/>
+                    <br/>
+                <h4> Your Phone Number </h4>
+                    <textarea type="text" className="submitter-name" rows="1" cols="50" placeholder="Optional" onChange={this.handleNumberPhoneChange}/>
                     <br/>
                     <br/>
-                <label> Your Message </label>
+                <h4> Your Message </h4>
+                    <textarea className="text-message-text" rows="5" cols="50" placeholder="Required" onChange={this.handleMessageChange}/> 
                     <br/>
-                    <textarea className="text-message-text" rows="5" cols="30" onChange={this.handleMessageChange}/> 
                     <br/>
                     <br/>
                     <br/>
 
                 <div className="centerButtonTwo">
                     <ButtonToolbar>
-                        <Button className="black-button" bsStyle="warning" bsSize="small"  onClick={ () => this.emailHandler() } >
+                        <Button className="black-button" bsStyle="warning" bsSize="large"  onClick={ () => this.emailHandler() } >
                             Send Email
                         </Button>
 
-                        <Button className="black-button" bsStyle="warning" bsSize="small"  onClick={ () => this.textHandler() } >
+                        <Button className="black-button" bsStyle="warning" bsSize="large"  onClick={ () => this.textHandler() } >
                             Send Text
                         </Button>
                     </ButtonToolbar>
                 </div>
 
                 <div>   
+                    <h4 style={{color:"rgba(0,0,0,0.7)", font:"1em"}}>
                     {this.state.thanks} 
+                    </h4>
                 </div>
+                <br/>
+                <br/>
                 <br/>
             </form>
         )
