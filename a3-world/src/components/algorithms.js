@@ -21,11 +21,12 @@ class Algorithms extends React.Component {
                     <a href="https://projecteuler.net/"><h4> {this.capitalizedTitle()}</h4> </a>
 
                 <h4> {this.currentAlg().description} </h4>
-
+                    <br />
                 <div className="algdiv">
                     <img src={this.currentAlg().image_links} />
                 </div>
-
+                <br/>
+                <br />
             </div>
         )
     }  
