@@ -154,7 +154,7 @@ h5 {
   background-color: rgba(255,255,255, 0.7) ;
 }
 
-.middle-main-div {
+/*.middle-main-div {
   position: fixed;
   top: 15%;
   right: 25%;
@@ -170,7 +170,32 @@ h5 {
   padding-right: 40px;
   padding-top: 10px;
   padding-bottom: 30px;
+}*/
+
+.middle-main-div {
+  position: relative;
+  width: 715px;
+  height: 600px;
+  font-family: 'Century Gothic';
+  background-color:rgba(255,182,193, 0.8); 
+  font-size: 16;
+  text-align: center;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0px 30px 40px rgba(0,0,0,0.35);
+  overflow: auto;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 10px;
+  padding-bottom: 30px;
 }
+
+
+
+
+
+
 
 .middle-main-div img {
   box-shadow: 0px 3px 10px darkred;
@@ -225,7 +250,11 @@ form h4 {
 .centerButton button {
     background-color: rgba(170,0,0,0.7);
     margin: 0px 0px 0px -30px;
+}
 
+.centerButton button:hover {
+    background-color: rgba(170,0,0,0.3);
+    margin: 0px 0px 0px -30px;
 }
 
 
