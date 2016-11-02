@@ -25,25 +25,26 @@ class Projects extends React.Component {
                 <h3> {this.currentProject().title}</h3>
                     <br/>
                 <h4> {this.currentProject().tagline} </h4>
-
+                    <br />
                 <div className="centerButton">
                     <a href={this.currentProject().github_link} target="_blank">
-                        <Button className="black-button" bsStyle="warning" bsSize="small">
+                        <Button className="black-button" bsSize="large">
                                 GitHub
                         </Button>
+                        <br />
+                        <br />
                     </a>
                 </div>
-
-          
-                    <br/>
+                    <br />                   
                     <br/>
                 <h4> 
                     <ul>
                         {this.spaceAdder().map(function (element) {
                             return (
-                                <div>
+                                <div className="project-details">
                             <li>{element}</li>
                                 <br/>
+                                 <br/>
                                 </div>
                             
                             )
