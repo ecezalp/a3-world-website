@@ -5,7 +5,7 @@ body {
 }
 
 .dropdown-menu {
-  background-color: rgba(255,182,193, 0.7);
+  background-color: rgba(255,255,255, 0.8);
   font-family: 'Century Gothic';
 }
 
@@ -55,7 +55,7 @@ h3 {
 }
 
 h2 {
-  font-size: 3em;
+  font-size: 3.2em;
 }
 
 /*.button-toolbar {
@@ -109,7 +109,7 @@ h2 {
 }
 
 .menu-item {
-  background-color: rgba(255,182,193, 0.4); 
+  background-color: rgba(255,255,255, 0.6); 
 }
 
 .example-enter {
@@ -145,11 +145,23 @@ h2 {
   width: 715px;
   height: 600px;
   font-family: 'Century Gothic';
-  background-color:rgba(255,182,193, 0.7); 
+  background-color:rgba(255,182,193, 0.8); 
   font-size: 16;
   text-align: center;
-  box-shadow: 0px 30px 40px rgba(0,0,0,.25);
- 
+  box-shadow: 0px 30px 40px rgba(0,0,0,0.35);
+  overflow: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+
+.middle-main-div img {
+  box-shadow: 0px 3px 10px darkred;
+}
+
+.pic-div img{
+  box-shadow: 0px 3px 10px darkred;
 }
 
 form h4 {
