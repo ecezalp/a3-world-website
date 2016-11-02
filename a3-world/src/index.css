@@ -58,6 +58,22 @@ h2 {
   font-size: 3.2em;
 }
 
+h5 {
+  font-size: 1.2em; 
+}
+
+.review-description-div {
+   margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.justify {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
 /*.button-toolbar {
  
 
@@ -150,14 +166,22 @@ h2 {
   text-align: center;
   box-shadow: 0px 30px 40px rgba(0,0,0,0.35);
   overflow: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 40px;
+  padding-right: 40px;
   padding-top: 10px;
   padding-bottom: 30px;
 }
 
 .middle-main-div img {
   box-shadow: 0px 3px 10px darkred;
+}
+
+.project-details {
+  text-align: left;
+}
+
+.middle-main-div h4 {
+  font-family: 'Century Gothic';
 }
 
 .pic-div img{
@@ -170,9 +194,14 @@ form h4 {
   color: rgb(204,0,0);
 }
 
+.algdiv img {
+  opacity: 0.92;
+}
+
 .centerButton {
   margin: 20px 0px 0px 300px;
 }
+
 
 .languages {
  -webkit-column-count: 2;
@@ -193,6 +222,12 @@ form h4 {
     
 }
 
+.centerButton button {
+    background-color: rgba(170,0,0,0.7);
+    margin: 0px 0px 0px -30px;
+
+}
+
 
 .centerButtonTwo {
       margin: -20px 0px 40px 400px;
@@ -204,9 +239,21 @@ form h4 {
 }
 
 .centerButtonTwo button:hover {
-     background-color: rgba(170,0,0, 0.3);
+      background-color: rgba(170,0,0, 0.3);
 }
 
+.review-buttons-div button {
+     background-color: rgba(170,0,0,0.7);
+     margin: 10px 10px 10px 10px;
+}
+
+.review-buttons-div button:hover {
+      background-color: rgba(170,0,0, 0.3);
+}
+
+.review-buttons-div {
+   margin: 0px 100px 0px 100px;
+}
 
 /*
 .top-middle-left-div {

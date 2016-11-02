@@ -18,15 +18,18 @@ class Algorithms extends React.Component {
         return (
             <div>
                 <br/>
-                    <a href="https://projecteuler.net/"><h4> {this.capitalizedTitle()}</h4> </a>
+                <br/>
+                    <a href="https://projecteuler.net/" target="_blank"><h4 style={{color:"rgb(204, 0, 0)"}}> {this.capitalizedTitle()} </h4> </a>
+               
+                <h4 style={{padding:"40px"}}> {this.currentAlg().description} </h4>
 
-                <h4> {this.currentAlg().description} </h4>
-                    <br />
+
                 <div className="algdiv">
                     <img src={this.currentAlg().image_links} />
                 </div>
                 <br/>
                 <br />
+               
             </div>
         )
     }  

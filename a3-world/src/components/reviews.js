@@ -46,22 +46,34 @@ class Reviews extends React.Component {
     render() {
         return (
             <div>
-                <Button className="black-button" bsStyle="warning" bsSize="small" onClick={() => this.toggleDescription()}>
-                        {this.state.button}
-                </Button>
+                <h3> {this.currentReview().title}</h3>
+                <br/>
+                <div className="review-buttons-div">
+                    <Button className="black-button" bsStyle="warning" bsSize="large" onClick={() => this.toggleDescription()}>
+                            {this.state.button}
+                    </Button>
 
-                <a href={this.currentReview().resource_link} target="_blank">
-                 <Button className="black-button" bsStyle="warning" bsSize="small">
-                        Resource Link
-                </Button>
-                </a>
-
-                <div>
+                    <a href={this.currentReview().resource_link} target="_blank">
+                    <Button className="black-button" bsStyle="warning" bsSize="large">
+                            Resource Link
+                    </Button>
+                    </a>
+                 </div>
+                  <br/>
+                   <br/>
+            
+                <div className="review-description-div">
+                    <h5>
                     {this.state.desc}
+                    </h5>
                 </div>
-
+                       <br/>
                 <div>
+                <h5>
+                    <div className="justify">
                     {this.returnReviewText()}
+                    </div>
+                </h5>
                 </div>
 
             </div>
