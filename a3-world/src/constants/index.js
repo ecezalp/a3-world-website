@@ -1,8 +1,10 @@
 import React from 'react'
 
-export const apiBaseLink = "https://a3-world-api.herokuapp.com/api/v1"
+// export const apiBaseLink = "https://a3-world-api.herokuapp.com/api/v1"
+export const apiBaseLink = "http://localhost:3000/api/v1"
+export const messageBaseLink = "http://localhost:3000/"
 
-export const messageBaseLink = "https://a3-world-api.herokuapp.com"
+// export const messageBaseLink = "https://a3-world-api.herokuapp.com"
 
 export const reviewArray = [review1, review2, review3, review4]
 
