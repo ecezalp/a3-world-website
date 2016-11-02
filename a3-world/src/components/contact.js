@@ -1,6 +1,8 @@
 import React from 'react'
 import { Button, ButtonToolbar } from 'react-bootstrap'
 
+import {messageBaseLink} from "../constants"
+
 class Contact extends React.Component {
 
     constructor (props) {
@@ -25,7 +27,8 @@ class Contact extends React.Component {
     }
 
      sendText () {
-       fetch("http://localhost:3000/text", {
+       const url = messageBaseLink + "/text"
+       fetch(url, {
             method: 'post',
             headers: {
             "Content-type": "application/json",
@@ -36,7 +39,8 @@ class Contact extends React.Component {
     }
 
     sendEmail () {
-       fetch("http://localhost:3000/email", {
+       const url = messageBaseLink + "/email"
+       fetch(url, {
             method: 'post',
             headers: {
             "Content-type": "application/json",
