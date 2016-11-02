@@ -9,17 +9,18 @@ class Contact extends React.Component {
         super(props)
         this.handleNameChange = this.handleNameChange.bind(this)
         this.handleMessageChange = this.handleMessageChange.bind(this)
+        this.handlePhoneChange = this.handlePhoneChange.bind(this)
         this.sendEmail = this.sendEmail.bind(this)
         this.sendText = this.sendText.bind(this)
-        this.state = {name: "", message: "", numberPhone: "", thanks: "Please enter your name and a message"}
+        this.state = {name: "", message: "", phone: "", thanks: "Please enter your name and a message"}
     }
 
     handleNameChange (event) {
         this.setState({name: event.target.value})
     }
 
-    handleNumberPhoneChange (event) {
-        this.SetState({numberPhone: event.target.value})
+    handlePhoneChange (event) {
+        this.setState({phone: event.target.value})
     }
 
     handleMessageChange (event) {
@@ -34,7 +35,7 @@ class Contact extends React.Component {
             "Content-type": "application/json",
             "Accepts": "application/json"
             },
-            body: JSON.stringify({name: this.state.name, message: this.state.message, numberPhone: this.state.numberPhone})
+            body: JSON.stringify({name: this.state.name, message: this.state.message, phone: this.state.phone})
         })
     }
 
@@ -46,7 +47,7 @@ class Contact extends React.Component {
             "Content-type": "application/json",
             "Accepts": "application/json"
             },
-            body: JSON.stringify({name: this.state.name, message: this.state.message, numberPhone: this.state.numberPhone})
+            body: JSON.stringify({name: this.state.name, message: this.state.message, phone: this.state.phone})
         })
     }
 
@@ -88,7 +89,7 @@ class Contact extends React.Component {
                     <br/>
                     <br/>
                 <h4> Your Phone Number </h4>
-                    <textarea type="text" className="submitter-name" rows="1" cols="50" placeholder="Optional" onChange={this.handleNumberPhoneChange}/>
+                    <textarea type="text" className="submitter-name" rows="1" cols="50" placeholder="Optional" onChange={this.handlePhoneChange}/>
                     <br/>
                     <br/>
                 <h4> Your Message </h4>
