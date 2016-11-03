@@ -36,9 +36,7 @@ class Reviews extends React.Component {
     }
 
     returnReviewText () {
-        debugger
         var currentReviewText = reviewArray.find( (review) => review.name.slice(-1) == this.currentReview().id )
-        
         return currentReviewText()
     }
 
@@ -67,7 +65,7 @@ class Reviews extends React.Component {
                     {this.state.desc}
                     </h5>
                 </div>
-                       <br/>
+                    <br/>
                 <div>
                 <h5>
                     <div className="justify">
