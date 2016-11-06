@@ -22,9 +22,7 @@ class App extends Component {
               Welcome to my world.
           </h1>
           <br/>
-          <h3>
-            Please click a button to learn more about me!
-          </h3>
+
         </div>
       )
     }
