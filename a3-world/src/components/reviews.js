@@ -9,19 +9,20 @@ import { Button } from 'react-bootstrap'
 import { reviewArray } from '../constants/' 
 
 
-
 class Reviews extends React.Component {
 
     constructor(){
         super()
         this.state = {desc: false, button: "Resource Description"}
-        this.toggleDescription = this.toggleDescription.bind(this)
-        this.currentReview = this.currentReview.bind(this)
+        this.returnReviewText = this.returnReviewText.bind(this)
     }
 
+    returnReviewText () {
+        var currentReviewText = reviewArray[this.props.params.id]
+        return ( currentReviewText )
+    }
 
-
-    currentReview() {
+     currentReview() {
         var currentReview = this.props.reviews.find( (review) => review.id.toString() === this.props.params.id)
         return (currentReview)
     }
@@ -35,49 +36,40 @@ class Reviews extends React.Component {
         }
     }
 
-    returnReviewText () {
-        var currentReviewText = reviewArray.find( (review) => review.name.slice(-1) == this.currentReview().id )
-        return currentReviewText()
-    }
-
-
     render() {
         return (
             <div>
                 <h3> {this.currentReview().title}</h3>
-                <br/>
+                    <br/>
                 <div className="review-buttons-div">
-                    <Button className="black-button" bsStyle="warning" bsSize="large" onClick={() => this.toggleDescription()}>
-                            {this.state.button}
-                    </Button>
-
+                        <Button className="black-button" bsStyle="warning" bsSize="large" onClick={() => this.toggleDescription()}>
+                                {this.state.button}
+                        </Button>
                     <a href={this.currentReview().resource_link} target="_blank">
-                    <Button className="black-button" bsStyle="warning" bsSize="large">
-                            Resource Link
-                    </Button>
+                        <Button className="black-button" bsStyle="warning" bsSize="large">
+                                Resource Link
+                        </Button>
                     </a>
-                 </div>
-                  <br/>
-                   <br/>
-            
-                <div className="review-description-div">
+                </div>
+                    <br/>
+                    <br/>
+                <div className="review-description-div justify">
                     <h5>
                     {this.state.desc}
                     </h5>
                 </div>
                     <br/>
                 <div>
-                <h5>
-                    <div className="justify">
-                    {this.returnReviewText()}
-                    </div>
-                </h5>
+                    <h5>
+                        <div className="justify">
+                            {this.returnReviewText()}
+                        </div>
+                    </h5>
                 </div>
-
             </div>
         )
     }  
-}
+}  
 
 function mapStateToProps(state, ownProps) {
     return {
