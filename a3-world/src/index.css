@@ -128,23 +128,7 @@ h5 {
   background-color: rgba(255,255,255, 0.6); 
 }
 
-.example-enter {
-  opacity: 0.01;
-}
 
-.example-enter.example-enter-active {
-  opacity: 1;
-  transition: opacity 500ms ease-in;
-}
-
-.example-leave {
-  opacity: 1;
-}
-
-.example-leave.example-leave-active {
-  opacity: 0.01;
-  transition: opacity 300ms ease-in;
-}
 
 .submitter-name {
   background-color: rgba(255,255,255, 0.7)
@@ -217,6 +201,19 @@ form h4 {
   font-family: 'Century Gothic';
   font-size: 1.6em;
   color: rgb(204,0,0);
+}
+
+.poem {
+  font-size: 2.3em;
+  text-align: left;
+}
+
+.line {
+     -webkit-transition: background-color 500ms ease-out 1s;
+    -moz-transition: background-color 500ms ease-out 1s;
+    -o-transition: background-color 500ms ease-out 1s;
+    transition: background-color 500ms ease-out 1s;
+  margin: 30px 0px 0px 0px;
 }
 
 .algdiv img {
