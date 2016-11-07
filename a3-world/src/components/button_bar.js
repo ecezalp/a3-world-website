@@ -79,7 +79,7 @@ class ButtonBar extends React.Component {
                         {this.buttonMapperReviews()}
                     </DropdownButton>
                 
-                    <DropdownButton className="black-button" bsSize="large" key={3} title={"Projects"}>
+                    <DropdownButton className="black-button" bsSize="large" key={3} title={"Portfolio"}>
                         {this.buttonMapperProjects()}
                     </DropdownButton>
 

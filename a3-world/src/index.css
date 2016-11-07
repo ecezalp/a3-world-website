@@ -128,23 +128,7 @@ h5 {
   background-color: rgba(255,255,255, 0.6); 
 }
 
-.example-enter {
-  opacity: 0.01;
-}
 
-.example-enter.example-enter-active {
-  opacity: 1;
-  transition: opacity 500ms ease-in;
-}
-
-.example-leave {
-  opacity: 1;
-}
-
-.example-leave.example-leave-active {
-  opacity: 0.01;
-  transition: opacity 300ms ease-in;
-}
 
 .submitter-name {
   background-color: rgba(255,255,255, 0.7)
@@ -219,6 +203,19 @@ form h4 {
   color: rgb(204,0,0);
 }
 
+.poem {
+  font-size: 2.3em;
+  text-align: left;
+}
+
+.line {
+     -webkit-transition: background-color 500ms ease-out 1s;
+    -moz-transition: background-color 500ms ease-out 1s;
+    -o-transition: background-color 500ms ease-out 1s;
+    transition: background-color 500ms ease-out 1s;
+  margin: 30px 0px 0px 0px;
+}
+
 .algdiv img {
   opacity: 0.92;
 }
@@ -245,6 +242,36 @@ form h4 {
   -moz-column-count: 2; 
     column-count: 2;
     
+}
+
+.first {
+  margin: -10px 0px 0px 0px;
+  font-size: 1.1em;  
+
+}
+
+.about-info {
+    margin-left: calc(36%);
+}
+
+.about-info-one button{
+   background-color: rgba(170,0,0,0.7);
+   margin: 20px 0px 20px 0px;
+}
+
+.about-info-one button:hover {
+      background-color: rgba(170,0,0,0.3); 
+      margin: 20px 0px 20px 0px;
+}
+
+.about-info-two button{
+   background-color: rgba(170,0,0,0.7);
+    margin: 20px 22px 20px 22px;
+}
+
+.about-info-two button:hover {
+      background-color: rgba(170,0,0,0.3);
+       margin: 20px 22px 20px 22px;
 }
 
 .centerButton button {
