@@ -244,6 +244,36 @@ form h4 {
     
 }
 
+.first {
+  margin: -10px 0px 0px 0px;
+  font-size: 1.1em;  
+
+}
+
+.about-info {
+    margin-left: calc(36%);
+}
+
+.about-info-one button{
+   background-color: rgba(170,0,0,0.7);
+   margin: 20px 0px 20px 0px;
+}
+
+.about-info-one button:hover {
+      background-color: rgba(170,0,0,0.3); 
+      margin: 20px 0px 20px 0px;
+}
+
+.about-info-two button{
+   background-color: rgba(170,0,0,0.7);
+    margin: 20px 22px 20px 22px;
+}
+
+.about-info-two button:hover {
+      background-color: rgba(170,0,0,0.3);
+       margin: 20px 22px 20px 22px;
+}
+
 .centerButton button {
     background-color: rgba(170,0,0,0.7);
     margin: 0px 0px 0px -30px;
